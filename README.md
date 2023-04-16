@@ -29,6 +29,7 @@
 
 
 ### Data Flow
+[**Architecture diagram**](https://github.com/hazellobo/INFO-7255/blob/main/ArchitectureDiagram.pdf)
 1. Generate token using the `/token` endpoint
 2. Validate further API requests using the Bearer Token
 3. Create JSON Object using the `POST` HTTP method
@@ -37,7 +38,6 @@
 6. Enqueue object in RabbitMQ queue to index the object
 7. Dequeue from RabbitMQ queue and index data in ElasticServer
 8. Implement Search queries using Kibana Console to retrieve indexed data
-[**Architecture diagram**](https://github.com/hazellobo/INFO-7255/blob/main/ArchitectureDiagram.pdf)
 
 
 ### Build and Run 
