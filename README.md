@@ -37,7 +37,7 @@
 6. Enqueue object in RabbitMQ queue to index the object
 7. Dequeue from RabbitMQ queue and index data in ElasticServer
 8. Implement Search queries using Kibana Console to retrieve indexed data
-[**Architecture diagram**](https://github.com/hazellobo/INFO7255-demo/blob/master/ArchitectureDiagram.pdf)
+[**Architecture diagram**](https://github.com/hazellobo/INFO-7255/blob/main/ArchitectureDiagram.pdf)
 
 
 ### Build and Run 
