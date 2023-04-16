@@ -58,5 +58,5 @@ This would start the server. Create the data using the REST API endpoints and qu
 - GET `/plan/{objectId}` - Fetches an existing plan provided by the objectId
     - An Etag for the object can be provided in the `If-None-Match` HTTP Request Header
     - If the request is successful, a valid Etag for the object is returned in the `ETag` HTTP Response Header
-- DELETE `/plan/{objectId}` - Deletes an existing plan provided by the id
+- DELETE `/plan/{objectId}` - Deletes an existing plan provided by the objectId
     - A valid Etag for the object should also be provided in the `If-Match` HTTP Request Header
