@@ -1,0 +1,101 @@
+
+
+GET indexplan/_mapping/
+
+GET indexplan
+
+GET indexplan/_doc/12xvxc345ssdsds-508
+
+GET indexplan/_doc/1234512xvc1314sdfsd-506
+
+GET indexplan/_doc/27283xvx9sdf-507
+
+GET indexplan/_doc/1234520xvc30sfs-505
+
+#returns all objects
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+
+#returns Chiild with parenttype linkedPlanServices and objectID 27283xvx9asdff-504
+GET indexplan/_search
+{
+  "query": {
+    "has_parent": {
+      "parent_type": "linkedPlanServices",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "match": {
+                "objectId": "27283xvx9asdff-504"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+
+#returns parent that has childType planserviceCostShares and copay > = 1
+GET indexplan/_search
+{
+  "query": {
+    "has_child": {
+      "type": "planserviceCostShares",
+      "query": {
+        "range": {
+          "copay": {
+            "gte": 1
+          }
+        }
+      }
+    }
+  }
+}
+
+#returns child that has parent linkedPlanServices and grand parent plan 
+GET indexplan/_search
+{
+  "query": {
+    "has_parent": {
+      "parent_type": "linkedPlanServices",
+      "query": {
+        "has_parent": {
+          "parent_type": "plan",
+          "query": {
+            "match": {
+              "planType": "inNetwork"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#returns parent that has child linkedPlanServices and grand child as planserviceCostShares and copay = 0
+GET indexplan/_search
+{
+  "query": {
+    "has_child": {
+      "type": "linkedPlanServices",
+      "query": {
+        "has_child": {
+          "type": "planserviceCostShares",
+          "query": {
+            "match": {
+              "copay": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
