@@ -29,7 +29,7 @@
 
 
 ### Data Flow
-[**Architecture diagram**](https://github.com/hazellobo/INFO-7255/blob/main/ArchitectureDiagram.pdf)
+[**Architecture diagram**](ArchitectureDiagram.pdf)
 1. Generate token using the `/token` endpoint
 2. Validate further API requests using the Bearer Token
 3. Create JSON Object using the `POST` HTTP method
