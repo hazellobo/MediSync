@@ -15,6 +15,7 @@
 - Docker
 - Redis 
 - Elastic Search
+- Kibana
 - RabbitMQ
 
 
@@ -29,7 +30,8 @@
 
 
 ### Data Flow
-[**Architecture diagram**](ArchitectureDiagram.pdf)
+![**Architecture diagram**](architecture_daigram.png)
+
 1. Generate token using the `/token` endpoint
 2. Validate further API requests using the Bearer Token
 3. Create JSON Object using the `POST` HTTP method
